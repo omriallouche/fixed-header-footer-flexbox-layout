@@ -1,0 +1,31 @@
+/* Set header and footer to be fixed while allowing scrolling of the middle section content */
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+.section-top, .panel-bottom {
+    flex-shrink: 0;
+}
+
+/* Add a Shadow on top and bottom parts of the middle section, to signal there's more content available */
+.section-middle {
+    overflow: overlay;
+    overflow-x: hidden;
+    background: linear-gradient(#fff 30%, rgba(255,255,255,0)),linear-gradient(rgba(255,255,255,0), #fff 70%) 0 100%,radial-gradient(farthest-side at 50% 0, rgba(43,43,43,0.25),rgba(43,43,43,0)),radial-gradient(farthest-side at 50% 100%, rgba(43,43,43,0.2),rgba(43,43,43,0)) 0 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px;
+    background-attachment: local, local, scroll, scroll;
+}
+
+/* Style the vertical scrollbar of the middle section */
+.section-middle::-webkit-scrollbar
+{
+    width: 4px;
+    background: rgb(243,243,243);
+}
+.section-middle::-webkit-scrollbar-thumb
+{
+    background: rgb(150,150,150);
+}
