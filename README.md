@@ -9,7 +9,7 @@ Today we’ll see a cool technique for creating a web layout with fixed header a
 
 For example, our layout can be used to keep the page’s name, menu or breadcrumbs always visible on the header, and Save/Cancel buttons on the footer.
 
-[Demo](https://omriallouche.github.io/asana-style-loader/)
+[Demo](https://omriallouche.github.io/fixed-header-footer-flexbox-layout/)
 
 I’ve seen this layout implemented with a fixed position and set heights for the header and footer. The problems with this approach start when the height of either the header or the footer change, for example because of dynamic data, or different screen resolutions. Since the approach hard-codes the height, it doesn’t adapt dynamically to the content it holds.
 
@@ -80,4 +80,4 @@ In Chrome, we can also style the vertical scrollbar. Let’s change the styling 
 ## That’s all folks!
 As we’ve just seen, flexbox can sometimes magically give elegant solutions to complex problems.
 
-Here's our [final solution](https://omriallouche.github.io/asana-style-loader/) again, and a [Plunker](https://plnkr.co/edit/Imh0DC?p=preview) for your convenience.
+Here's our [final solution](https://omriallouche.github.io/fixed-header-footer-flexbox-layout/) again, and a [Plunker](https://plnkr.co/edit/Imh0DC?p=preview) for your convenience.
