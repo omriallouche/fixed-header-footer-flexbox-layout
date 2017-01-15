@@ -2,7 +2,7 @@
 .sections-container {
     display: flex;
     flex-direction: column;
-    height: 80vh;
+    height: 60vh;
 }
 .section-top, .panel-bottom {
     flex-shrink: 0;
