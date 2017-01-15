@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}" media="screen" type="text/css">
+  <link rel="stylesheet" href="{{ '/assets/css/print.css' | relative_url }}" media="print" type="text/css">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+  <!--[if lt IE 9]>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <title>{{ site.title | default: site.github.repository_name }} by {{ site.github.owner_name }}</title>
+
+  <style>
+    header {
+      position: relative;
+      background-image: url({{ site.github.url }}/demo/header-background.jpg);
+      background-size: cover;
+      background-position: center center;
+    }
+
+    header:before {
+      content: "";
+      position: absolute;
+      background: rgba(0,0,0,.2);
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+    }
+
+    header h2 { margin-bottom: .5em }
+    #main-content h1 { margin-bottom: .75em; }
+
+    .repo-owner { margin-bottom: 25px; }
+    #sidebar .user-profile { text-align: center; }
+    img.avatar.width-full.rounded-2 {
+      border-radius: 50%;
+      border: 5px solid;
+      box-shadow: 0px 0px 7px #777;
+      max-width: 100%;
+      width: 50%;
+      height: 100%;
+    }
+    .vcard-names { font-family: 'Architects Daughter', 'Helvetica Neue', Helvetica, Arial, serif; }
+    .vcard-username small {
+      color: #337ab7;
+    }
+    .user-profile-bio {
+      line-height: 1.5em;
+      text-align: justify;
+      margin-bottom: 1em;
+    }
+    .vcard-details ul {
+      padding-left: 0;
+      list-style-type: none;
+    }
+    .oticon {
+      vertical-align: middle;
+    }
+    li.vcard-detail {
+      display: inline-block;
+      margin: .5em;
+    }
+    ul.vcard-details {
+      padding: 0;
+    }
+    .share-buttons {
+      min-height: 140px;
+      margin-top: 2em;
+      margin-bottom: 2em;
+      background: white;
+      padding: 1em;
+      border: 1px solid #eee;
+      text-align: center;
+    }
+  </style>
+
+  {% seo %}
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <!-- START ShareThis JS -->
+  <script type="text/javascript" id="st_insights_js" src="https://ws.sharethis.com/button/buttons.js?publisher=2fe2776b-2bea-41dd-8695-33fb17169881"></script>
+  <script type="text/javascript">stLight.options({publisher: "2fe2776b-2bea-41dd-8695-33fb17169881", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+  <!-- END ShareThis JS -->
+</head>
+
+<body>
+<header>
+  <div class="inner">
+    <a href="{{ '/' | absolute_url }}">
+      <h1>{{ site.title | default: site.github.repository_name | replace:'-',' ' | capitalize }}</h1>
+    </a>
+    <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+    {% if site.github.is_project_page %}
+      <a href="{{ site.github.repository_url }}" class="button"><small>View project on</small> GitHub</a>
+    {% endif %}
+    {% if site.github.is_user_page %}
+      <a href="{{ site.github.repository_url }}" class="button"><small>Follow me on</small> GitHub</a>
+    {% endif %}
+
+    <!-- Github star widget -->
+    <div class="github-star">
+      <a class="github-button" href="{{site.github.repository_url}}"
+         data-icon="octicon-star"
+         data-style="mega"
+         data-count-href="/{{site.github.owner_name}}/{{site.github.repository_name}}/stargazers"
+         data-count-api="/repos/{{site.github.owner_name}}/{{site.github.repository_name}}#stargazers_count"
+         data-count-aria-label="# stargazers on GitHub"
+         aria-label="Star {{site.github.owner_name}}/{{site.github.repository_name}} on GitHub">Star</a>
+
+      <a class="github-button"
+         href="{{site.github.repository_url}}/fork"
+         data-icon="octicon-repo-forked"
+         data-style="mega"
+         data-count-href="/{{site.github.owner_name}}/{{site.github.repository_name}}/network"
+         data-count-api="/repos/{{site.github.owner_name}}/{{site.github.repository_name}}#forks_count"
+         data-count-aria-label="# forks on GitHub"
+         aria-label="Fork {{site.github.owner_name}}/{{site.github.repository_name}} on GitHub">Fork</a>
+
+    </div>
+  </div>
+</header>
+
+<div id="content-wrapper">
+  <div class="inner clearfix">
+    <section id="main-content">
+      <div id="content">
+        {{ content }}
+      </div>
+
+      <div id="" style="margin-top: 3em">
+        This page accompanies the project <a href="{{site.github.repository_url}}">{{site.github.repository_name}}</a>. Check the repo for information on installation and usage.
+      </div>
+
+      <div class="share-buttons">
+        <span class='st_facebook_vcount' displayText='Facebook'></span>
+        <span class='st_twitter_vcount' displayText='Tweet'></span>
+        <span class='st_linkedin_vcount' displayText='LinkedIn'></span>
+      </div>
+    </section>
+
+    <aside id="sidebar">
+      {% if site.show_downloads | default: true %}
+      <a href="{{ site.github.zip_url }}" class="button">
+        <small>Download</small>
+        .zip file
+      </a>
+      <a href="{{ site.github.tar_url }}" class="button">
+        <small>Download</small>
+        .tar.gz file
+      </a>
+      {% endif %}
+
+      {% if site.github.is_project_page %}
+      <p class="repo-owner"><a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.</p>
+      {% endif %}
+
+      <div class="user-profile col-3-999999 float-left-999999 pr-3-9999" itemscope="" itemtype="http://schema.org/Person">
+        <a href="{{ site.github.owner_url }}" aria-label="Github Account of {{site.github.owner_name}}" class="vcard-avatar d-block tooltipped tooltipped-s">
+          <img alt="{{ site.github.owner_name }}"
+               class="avatar width-full rounded-2"
+               height="230"
+               src="{{site.github.owner_gravatar_url}}" width="230">
+        </a>
+
+        <div class="vcard-names-container py-3 js-sticky js-user-profile-sticky-fields " style="position: static;">
+          <h3 class="vcard-names">
+            <a href="{{ site.github.owner_url }}" aria-label="Omri's Github Account">
+              {% if site.owner_display_name %}
+                <span class="vcard-fullname d-block" itemprop="name">{{site.owner_display_name}}</span>
+                <span class="vcard-username d-block" itemprop="additionalName"><small>({{ site.github.owner_name }})</small></span>
+
+              {% else %}
+                <span class="vcard-fullname d-block" itemprop="name">({{ site.github.owner_name }})</span>
+              {% endif %}
+            </a>
+          </h3>
+        </div>
+
+        <div class="user-profile-bio">
+          <div>
+            {{site.owner_bio}}
+          </div>
+        </div>
+
+        <ul class="vcard-details border-top border-gray-light py-3">
+          <li class="vcard-detail pt-1 css-truncate css-truncate-target">
+            <a href="https://www.facebook.com/{{site.owner_facebook_username}}" title="Facebook" target="_blank">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+
+          <li class="vcard-detail pt-1 css-truncate css-truncate-target">
+            <a href="https://twitter.com/{{site.twitter.username}}" title="Twitter" target="_blank">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+
+          <li class="vcard-detail pt-1 css-truncate css-truncate-target">
+            <a href="{{site.owner_linkedin_url}}" title="LinkedIn" target="_blank">
+              <i class="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+
+        <div class="social-follow">
+          <span class='st_fbsub_large' displayText='Facebook Subscribe' st_username='{{site.owner_facebook_username}}'></span>
+          <span class='st_twitterfollow_large' displayText='Twitter Follow' st_username='{{site.twitter.username}}'></span>
+        </div>
+
+      </div>
+    </aside>
+  </div>
+</div>
+
+{% if site.google_analytics %}
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("{{ site.google_analytics }}");
+      pageTracker._trackPageview();
+    } catch(err) {}
+  </script>
+{% endif %}
+</body>
+</html>

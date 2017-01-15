@@ -1,0 +1,15 @@
+name: GitHub Pages Project Template
+markdown: kramdown
+theme: jekyll-theme-architect
+gems:
+  - jekyll-seo-tag
+
+owner_display_name: Omri Allouche
+owner_bio: Entrepreneur, Data Scientist and Software engineer, with a PhD in Computational Ecology and 15 years experience leading R&amp;D teams and managing startups.
+owner_facebook_username: omri.allouche
+owner_linkedin_url: https://www.linkedin.com/in/omria
+twitter:
+  username: GilgameshSleeps
+facebook:
+  admins: omri.allouche
+google_analytics: UA-89870336-1
